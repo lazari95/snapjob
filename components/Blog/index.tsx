@@ -2,6 +2,7 @@ import React from "react";
 import SectionHeader from "../Common/SectionHeader";
 import BlogItem from "./BlogItem";
 import BlogData from "./blogData";
+import Link from "next/link"
 
 const Blog = async () => {
   return (
@@ -11,9 +12,9 @@ const Blog = async () => {
         <div className="animate_top mx-auto text-center">
           <SectionHeader
             headerInfo={{
-              title: `NEWS & BLOGS`,
-              subtitle: `Latest News & Blogs`,
-              description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam ante in maximus.`,
+              title: `Punet`,
+              subtitle: `Punet e fundit`,
+              description: `Per me te pare te gjitha punet klikoni meposhte.`,
             }}
           />
         </div>
@@ -25,6 +26,13 @@ const Blog = async () => {
           {BlogData.slice(0, 3).map((blog, key) => (
             <BlogItem blog={blog} key={key} />
           ))}
+        </div>
+        <div className="flex justify-center items-center mt-8">
+          <Link href="/blog">
+            <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300">
+              Click Me
+            </button>
+          </Link>
         </div>
       </div>
     </section>
